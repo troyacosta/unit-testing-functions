@@ -104,7 +104,9 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function myMin(integer1, integer2) {
 
+}
 /*
  * PROBLEM `myMax`: (normal) - Actual Interview Question
  * Write a function called `myMax` that takes an array of integers ans returns
@@ -114,7 +116,9 @@ function absVal(integer) {
  *
  * Insane mode: do this without using a for loop.
  */
+function myMax(intArray) {
 
+}
 /*
  * PROBLEM `getMonth`: (normal)
  * Write a function called `getMonth` that maps a given integer to a month.
@@ -126,20 +130,26 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function getMonth(int) {
 
+}
 /*
  * PROBLEM `randomElement`: (normal)
  * Create a function called `randomElement` that takes an array of values and
  * returns one randomly selected value from that array.
  */
+function randomElement(values) {
 
+}
 /*
  * PROBLEM `studentPairs`: (normal)
  * Create a javascript function called `studentPairs` that takes an array of
  * student names and returns an array of randomly selected pairs of students
  * (array of arrays).
  */
+function studentPairs(students) {
 
+}
 /*
  * PROBLEM `sumSquares`: (normal)
  * Write a function called `sumSquares` that returns the sum of squares of all
@@ -147,7 +157,9 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function sumSquares() {
 
+}
 /* 
  * PROBLEM `findMaxDiff`: (normal)
  * Given an array of integers, write a function called `findMaxDiff` that finds
@@ -155,7 +167,9 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function findMaxDiff(ints) {
 
+}
 /*
  * PROBLEM `insertDashes`: (normal)
  * Write a function called `insertDashes` that transforms a given sentence into
@@ -164,7 +178,9 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function insertDashes(string) {
 
+}
 /*
  * PROBLEM `mySubstring`: (normal)
  * Implement a function called `mySubstring` that can output the substring of
@@ -176,7 +192,9 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-
+function mySubstring() {
+	
+}
 /*
  * PROBLEM `splitSwap`: (hard)
  * Write a function called `splitSwap` that swaps two halves of a given array.
