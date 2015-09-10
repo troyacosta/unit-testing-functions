@@ -10,6 +10,6 @@ describe('myMin', function() {
 		expect(function() {functions.myMin('1','2') }).to.throw('Invalid Input');
 	});
 	it('should return an integer and it should be the lower value of the two', function() {
-		expect(functions.myMin(1,2)).to.deep.equal(1);
+		expect(functions.myMin(1,2)).to.equal(1);
 	});
 });

@@ -157,7 +157,7 @@ function studentPairs(students) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-function sumSquares() {
+function sumSquares(n) {
 
 }
 /* 
@@ -167,7 +167,7 @@ function sumSquares() {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-function findMaxDiff(ints) {
+function findMaxDiff(intArray) {
 
 }
 /*
@@ -192,8 +192,8 @@ function insertDashes(string) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-function mySubstring() {
-	
+function mySubstring(string, start, end) {
+
 }
 /*
  * PROBLEM `splitSwap`: (hard)
