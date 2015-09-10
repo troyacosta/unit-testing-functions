@@ -197,10 +197,10 @@ function studentPairs(students) {
 	if(!_.isArray(students)) {
 	throw 'Invalid Input';
 	}
-	for(var studentNum = 0; studentNum < students.length; students++) {
+	for(var studentNum = 0; studentNum < students.length; studentNum++) {
 		var currentStudent = students[studentNum];
 		if(!_.isString(currentStudent)) {
-			throw 'Invalid Input';
+			throw 'Invalid Input: elements in the argument array must be strings';
 		}
 	}
 	var pairs =[];
@@ -229,7 +229,19 @@ function studentPairs(students) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function sumSquares(n) {
-
+	if(typeof n !== 'number') {
+		throw 'Invalid Input: argument must be a number';
+	}
+	if(n < 1) {
+		throw 'Invalid Input: argument must be 1 or greater';
+	}
+	var square = null;
+	var total = null;
+	for(var i = 1; i <= n; i++) {
+		square = i * i;
+		total += square;
+	}
+	return total;
 }
 /* 
  * PROBLEM `findMaxDiff`: (normal)
@@ -239,7 +251,23 @@ function sumSquares(n) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function findMaxDiff(intArray) {
-
+	if(!_.isArray(intArray)) {
+		throw 'Invalid Input: argument has to be an array';
+	}
+	for(var i = 0; i < intArray.length; i++) {
+		if(!_.isNumber(intArray[i])) {
+			throw 'Invalid Input: array can only contain numbers';
+		}
+	}
+	var difference = null;
+	var largestDifference = 0;
+	for(var i = 0; i < intArray.length - 1; i++) {
+		difference = intArray[i+1] - intArray[i];
+		if(largestDifference < difference) {
+			largestDifference = difference;
+		}
+	}
+	return largestDifference;	
 }
 /*
  * PROBLEM `insertDashes`: (normal)

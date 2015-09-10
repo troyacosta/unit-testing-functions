@@ -12,7 +12,7 @@ describe('studentPairs', function() {
 	it('should return an array', function() {
 		expect(functions.studentPairs(['a','b'])).to.be.instanceof(Array);
 	});
-	it('should not allow non-string students', function() {
-		expect(function() {functions.studentPairs([troy, mike]) }).to.throw('Invalid Input');
+	it('should throw an exception if there are non-string elements in the argument array', function() {
+		expect(function() {functions.studentPairs([troy, mike]) }).to.throw('Invalid Input: elements in the argument array must be strings');
 	});
 });
