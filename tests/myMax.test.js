@@ -13,6 +13,6 @@ describe('myMax', function() {
 		expect(function() {functions.myMax('1') }).to.throw('Invalid Input');
 	});
 	it('should return the highest integer of the array', function() {
-		expect(functions.myMax([3,5,7,9])).to.deep.equal(9);
+		expect(functions.myMax([3,5,7,9])).to.equal(9);
 	});
 });

@@ -1,4 +1,5 @@
 'use strict';
+var _ = require('lodash');
 
 /*
  * PROBLEM `checkData`: (normal)
@@ -105,7 +106,18 @@ function absVal(integer) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function myMin(integer1, integer2) {
-
+	if(typeof integer1 !== 'number' && typeof integer2 !== 'number') {
+		throw 'Invalid Input';
+	}
+	if(integer1 === integer2) {
+		throw 'Invalid Input: arguments can not be the same value';
+	}
+	if(integer1 < integer2) {
+		return integer1;
+	}
+	else if(integer1 > integer2) {
+		return integer2;
+	}
 }
 /*
  * PROBLEM `myMax`: (normal) - Actual Interview Question
@@ -117,7 +129,16 @@ function myMin(integer1, integer2) {
  * Insane mode: do this without using a for loop.
  */
 function myMax(intArray) {
-
+	if(!_.isArray(intArray)) {
+	throw 'Invalid Input';
+	}
+	var max = 0;
+	for(var i = 0; i < intArray.length; i++) {
+		if(max < intArray[i]) {
+			max =+intArray[i];
+			}
+	}
+	return max;
 }
 /*
  * PROBLEM `getMonth`: (normal)
@@ -130,8 +151,29 @@ function myMax(intArray) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-function getMonth(int) {
-
+function getMonth(integer) {
+	if(typeof integer !== 'number') {
+		throw 'Invalid Input: argument must be a number';
+	}
+	if(integer > 12 || integer < 1) {
+		throw 'Invalid Input: number can not be higher than 12 or less than 1';
+	}
+	var month = integer;
+	var months = {
+        1: 'January',
+        2: 'February',
+        3: 'March',
+        4: 'April',
+        5: 'May',
+        6: 'June',
+        7: 'July',
+        8: 'August',
+        9: 'September',
+        10: 'October',
+        11: 'November',
+        12: 'December'
+    }
+    return months[month];
 }
 /*
  * PROBLEM `randomElement`: (normal)
@@ -139,7 +181,11 @@ function getMonth(int) {
  * returns one randomly selected value from that array.
  */
 function randomElement(values) {
-
+	if(!_.isArray(values)) {
+	throw 'Invalid Input: your argument must be an array';
+	}
+	var item = values[Math.floor(Math.random() * values.length)];
+	return item;
 }
 /*
  * PROBLEM `studentPairs`: (normal)
@@ -148,7 +194,32 @@ function randomElement(values) {
  * (array of arrays).
  */
 function studentPairs(students) {
-
+	if(!_.isArray(students)) {
+	throw 'Invalid Input';
+	}
+	for(var studentNum = 0; studentNum < students.length; students++) {
+		var currentStudent = students[studentNum];
+		if(!_.isString(currentStudent)) {
+			throw 'Invalid Input';
+		}
+	}
+	var pairs =[];
+	var max = Math.floor(students.length/2);
+	for(var pairNum = 0; pairNum < max; pairNum++) {
+		var student1 = getRandomInt(0, students.length-1);
+		var student1 = students.splice(student1, 1);
+		var student2 = getRandomInt(0, students.length-1);
+		var student2 = students.splice(student2, 1);
+		pairs.push(student1.concat(student2));
+	}
+	if(students > 0) {
+		var pairNum = getRandomInt(0, pairs.length-1);
+		pairs[pairNum].push(students[0]);
+	}
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max -min +1)) + min;
+	}
+	return pairs;
 }
 /*
  * PROBLEM `sumSquares`: (normal)
