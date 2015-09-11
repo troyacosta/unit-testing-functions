@@ -10,15 +10,14 @@ var _ = require('lodash');
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function checkData(inputString) {
-	if(typeof inputString !== 'string') {
-		throw 'Invalid Input';
-	}
-	if(inputString.length === 3) {
-		return true;
-	}
-	else {
-		return false;
-	}
+    if (typeof inputString !== 'string') {
+        throw 'Invalid Input';
+    }
+    if (inputString.length === 3) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /*
@@ -29,21 +28,21 @@ function checkData(inputString) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function concatenateArrays(a, b) {
-	if(Array.isArray(a) !== true && Array.isArray(b) !== true) {
-		throw 'Invalid Input';
-	}
-	for(var i = 0; i < a.length; i++) {
-		if(typeof a[i] !== 'number') {
-			throw 'Invalid Input';
-		}
-	}
-	for(var i = 0; i < b.length; i++) {
-		if(typeof b[i] !== 'number') {
-			throw 'Invalid Input';
-		}
-	}
-	var newArray = a.concat(b);
-	return newArray;
+    if (Array.isArray(a) !== true && Array.isArray(b) !== true) {
+        throw 'Invalid Input';
+    }
+    for (var i = 0; i < a.length; i++) {
+        if (typeof a[i] !== 'number') {
+            throw 'Invalid Input';
+        }
+    }
+    for (var i = 0; i < b.length; i++) {
+        if (typeof b[i] !== 'number') {
+            throw 'Invalid Input';
+        }
+    }
+    var newArray = a.concat(b);
+    return newArray;
 }
 
 /*
@@ -56,11 +55,11 @@ function concatenateArrays(a, b) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function fixProperNoun(noun) {
-	if(typeof noun !== 'string') {
-		throw 'Invalid Input';
-	}
-	var properNoun = noun.charAt(0).toUpperCase() + noun.slice(1);
-	return properNoun;
+    if (typeof noun !== 'string') {
+        throw 'Invalid Input';
+    }
+    var properNoun = noun.charAt(0).toUpperCase() + noun.slice(1);
+    return properNoun;
 }
 
 /*
@@ -71,11 +70,11 @@ function fixProperNoun(noun) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function sortLetters(inputString) {
-	if(typeof inputString !== 'string') {
-		throw 'Invalid Input';
-	}
-	var sortedString = inputString.split('').sort().join('');
-	return sortedString;
+    if (typeof inputString !== 'string') {
+        throw 'Invalid Input';
+    }
+    var sortedString = inputString.split('').sort().join('');
+    return sortedString;
 }
 
 /*
@@ -86,16 +85,14 @@ function sortLetters(inputString) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function absVal(integer) {
-	if(typeof integer !== 'number') {
-		throw 'Invalid Input';
-	}
-	else if(integer % 1 !== 0) {
-		throw 'Invalid Input';
-	}
-	else if(integer < 0) {
-		integer *= -1;
-	}
-	return integer;
+    if (typeof integer !== 'number') {
+        throw 'Invalid Input';
+    } else if (integer % 1 !== 0) {
+        throw 'Invalid Input';
+    } else if (integer < 0) {
+        integer *= -1;
+    }
+    return integer;
 }
 
 /*
@@ -106,18 +103,17 @@ function absVal(integer) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function myMin(integer1, integer2) {
-	if(typeof integer1 !== 'number' && typeof integer2 !== 'number') {
-		throw 'Invalid Input';
-	}
-	if(integer1 === integer2) {
-		throw 'Invalid Input: arguments can not be the same value';
-	}
-	if(integer1 < integer2) {
-		return integer1;
-	}
-	else if(integer1 > integer2) {
-		return integer2;
-	}
+    if (typeof integer1 !== 'number' && typeof integer2 !== 'number') {
+        throw 'Invalid Input';
+    }
+    if (integer1 === integer2) {
+        throw 'Invalid Input: arguments can not be the same value';
+    }
+    if (integer1 < integer2) {
+        return integer1;
+    } else if (integer1 > integer2) {
+        return integer2;
+    }
 }
 /*
  * PROBLEM `myMax`: (normal) - Actual Interview Question
@@ -129,16 +125,16 @@ function myMin(integer1, integer2) {
  * Insane mode: do this without using a for loop.
  */
 function myMax(intArray) {
-	if(!_.isArray(intArray)) {
-	throw 'Invalid Input';
-	}
-	var max = 0;
-	for(var i = 0; i < intArray.length; i++) {
-		if(max < intArray[i]) {
-			max =+intArray[i];
-			}
-	}
-	return max;
+    if (!_.isArray(intArray)) {
+        throw 'Invalid Input';
+    }
+    var max = 0;
+    for (var i = 0; i < intArray.length; i++) {
+        if (max < intArray[i]) {
+            max = +intArray[i];
+        }
+    }
+    return max;
 }
 /*
  * PROBLEM `getMonth`: (normal)
@@ -152,14 +148,14 @@ function myMax(intArray) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function getMonth(integer) {
-	if(typeof integer !== 'number') {
-		throw 'Invalid Input: argument must be a number';
-	}
-	if(integer > 12 || integer < 1) {
-		throw 'Invalid Input: number can not be higher than 12 or less than 1';
-	}
-	var month = integer;
-	var months = {
+    if (typeof integer !== 'number') {
+        throw 'Invalid Input: argument must be a number';
+    }
+    if (integer > 12 || integer < 1) {
+        throw 'Invalid Input: number can not be higher than 12 or less than 1';
+    }
+    var month = integer;
+    var months = {
         1: 'January',
         2: 'February',
         3: 'March',
@@ -181,11 +177,11 @@ function getMonth(integer) {
  * returns one randomly selected value from that array.
  */
 function randomElement(values) {
-	if(!_.isArray(values)) {
-	throw 'Invalid Input: your argument must be an array';
-	}
-	var item = values[Math.floor(Math.random() * values.length)];
-	return item;
+    if (!_.isArray(values)) {
+        throw 'Invalid Input: your argument must be an array';
+    }
+    var item = values[Math.floor(Math.random() * values.length)];
+    return item;
 }
 /*
  * PROBLEM `studentPairs`: (normal)
@@ -194,32 +190,33 @@ function randomElement(values) {
  * (array of arrays).
  */
 function studentPairs(students) {
-	if(!_.isArray(students)) {
-	throw 'Invalid Input';
-	}
-	for(var studentNum = 0; studentNum < students.length; studentNum++) {
-		var currentStudent = students[studentNum];
-		if(!_.isString(currentStudent)) {
-			throw 'Invalid Input: elements in the argument array must be strings';
-		}
-	}
-	var pairs =[];
-	var max = Math.floor(students.length/2);
-	for(var pairNum = 0; pairNum < max; pairNum++) {
-		var student1 = getRandomInt(0, students.length-1);
-		var student1 = students.splice(student1, 1);
-		var student2 = getRandomInt(0, students.length-1);
-		var student2 = students.splice(student2, 1);
-		pairs.push(student1.concat(student2));
-	}
-	if(students > 0) {
-		var pairNum = getRandomInt(0, pairs.length-1);
-		pairs[pairNum].push(students[0]);
-	}
-	function getRandomInt(min, max) {
-		return Math.floor(Math.random() * (max -min +1)) + min;
-	}
-	return pairs;
+    if (!_.isArray(students)) {
+        throw 'Invalid Input';
+    }
+    for (var studentNum = 0; studentNum < students.length; studentNum++) {
+        var currentStudent = students[studentNum];
+        if (!_.isString(currentStudent)) {
+            throw 'Invalid Input: elements in the argument array must be strings';
+        }
+    }
+    var pairs = [];
+    var max = Math.floor(students.length / 2);
+    for (var pairNum = 0; pairNum < max; pairNum++) {
+        var student1 = getRandomInt(0, students.length - 1);
+        var student1 = students.splice(student1, 1);
+        var student2 = getRandomInt(0, students.length - 1);
+        var student2 = students.splice(student2, 1);
+        pairs.push(student1.concat(student2));
+    }
+    if (students > 0) {
+        var pairNum = getRandomInt(0, pairs.length - 1);
+        pairs[pairNum].push(students[0]);
+    }
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    return pairs;
 }
 /*
  * PROBLEM `sumSquares`: (normal)
@@ -229,19 +226,19 @@ function studentPairs(students) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function sumSquares(n) {
-	if(typeof n !== 'number') {
-		throw 'Invalid Input: argument must be a number';
-	}
-	if(n < 1) {
-		throw 'Invalid Input: argument must be 1 or greater';
-	}
-	var square = null;
-	var total = null;
-	for(var i = 1; i <= n; i++) {
-		square = i * i;
-		total += square;
-	}
-	return total;
+    if (typeof n !== 'number') {
+        throw 'Invalid Input: argument must be a number';
+    }
+    if (n < 1) {
+        throw 'Invalid Input: argument must be 1 or greater';
+    }
+    var square = null;
+    var total = null;
+    for (var i = 1; i <= n; i++) {
+        square = i * i;
+        total += square;
+    }
+    return total;
 }
 /* 
  * PROBLEM `findMaxDiff`: (normal)
@@ -251,23 +248,23 @@ function sumSquares(n) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function findMaxDiff(intArray) {
-	if(!_.isArray(intArray)) {
-		throw 'Invalid Input: argument has to be an array';
-	}
-	for(var i = 0; i < intArray.length; i++) {
-		if(!_.isNumber(intArray[i])) {
-			throw 'Invalid Input: array can only contain numbers';
-		}
-	}
-	var difference = null;
-	var largestDifference = 0;
-	for(var i = 0; i < intArray.length - 1; i++) {
-		difference = intArray[i+1] - intArray[i];
-		if(largestDifference < difference) {
-			largestDifference = difference;
-		}
-	}
-	return largestDifference;	
+    if (!_.isArray(intArray)) {
+        throw 'Invalid Input: argument has to be an array';
+    }
+    for (var i = 0; i < intArray.length; i++) {
+        if (!_.isNumber(intArray[i])) {
+            throw 'Invalid Input: array can only contain numbers';
+        }
+    }
+    var difference = null;
+    var largestDifference = 0;
+    for (var i = 0; i < intArray.length - 1; i++) {
+        difference = intArray[i + 1] - intArray[i];
+        if (largestDifference < difference) {
+            largestDifference = difference;
+        }
+    }
+    return largestDifference;
 }
 /*
  * PROBLEM `insertDashes`: (normal)
@@ -278,17 +275,17 @@ function findMaxDiff(intArray) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function insertDashes(string) {
-	if(!_.isString(string)) {
-		throw 'Invalid Input: argument must be a string';
-	}
-	var finalArray = [];
-	var dashes = string.split(' ');
-	for (var i = 0; i < dashes.length; i++) {
-		var newString = dashes[i].split('').join('-');
-		finalArray.push(newString);
-	}
-	finalArray = finalArray.join(' ');
-	return finalArray;
+    if (!_.isString(string)) {
+        throw 'Invalid Input: argument must be a string';
+    }
+    var finalArray = [];
+    var dashes = string.split(' ');
+    for (var i = 0; i < dashes.length; i++) {
+        var newString = dashes[i].split('').join('-');
+        finalArray.push(newString);
+    }
+    finalArray = finalArray.join(' ');
+    return finalArray;
 }
 /*
  * PROBLEM `mySubstring`: (normal)
@@ -302,15 +299,15 @@ function insertDashes(string) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function mySubstring(string, start, end) {
-	if(!_.isString(string)) {
-		throw 'Invalid Input: first argument has to be a string';
-	}
-	if(!_.isNumber(start) || !_.isNumber(end)) {
-		throw 'Invalid Input: second and third arguments must be numbers';
-	}
-	if(start > end) {
-		throw 'Invalid Input: second argument must be less than third argument';
-	}
+    if (!_.isString(string)) {
+        throw 'Invalid Input: first argument has to be a string';
+    }
+    if (!_.isNumber(start) || !_.isNumber(end)) {
+        throw 'Invalid Input: second and third arguments must be numbers';
+    }
+    if (start > end) {
+        throw 'Invalid Input: second argument must be less than third argument';
+    }
     var difference = start - end;
     var newString = string.slice(start, difference);
     return newString;
@@ -478,29 +475,29 @@ function mySubstring(string, start, end) {
  * Do not modify the code below
  */
 module.exports = {
-	checkData: 				typeof checkData === 'undefined' ? undefined : checkData,
-	concatenateArrays: 		typeof concatenateArrays === 'undefined' ? undefined : concatenateArrays,
-	fixProperNoun: 			typeof fixProperNoun === 'undefined' ? undefined : fixProperNoun,
-	sortLetters: 			typeof sortLetters === 'undefined' ? undefined : sortLetters,
-	absVal: 				typeof absVal === 'undefined' ? undefined : absVal,
-	myMin: 					typeof myMin === 'undefined' ? undefined : myMin,
-	myMax: 					typeof myMax === 'undefined' ? undefined : myMax,
-	getMonth: 				typeof getMonth === 'undefined' ? undefined : getMonth,
-	randomElement: 			typeof randomElement === 'undefined' ? undefined : randomElement,
-	studentPairs: 			typeof studentPairs === 'undefined' ? undefined : studentPairs,
-	sumSquares: 			typeof sumSquares === 'undefined' ? undefined : sumSquares,
-	findMaxDiff: 			typeof findMaxDiff === 'undefined' ? undefined : findMaxDiff,
-	insertDashes: 			typeof insertDashes === 'undefined' ? undefined : insertDashes,
-	mySubstring: 			typeof mySubstring === 'undefined' ? undefined : mySubstring,
-	splitSwap: 				typeof splitSwap === 'undefined' ? undefined : splitSwap,
-	smallMultiples: 		typeof smallMultiples === 'undefined' ? undefined : smallMultiples,
-	rot13: 					typeof rot13 === 'undefined' ? undefined : rot13,
-	derot13: 				typeof derot13 === 'undefined' ? undefined : derot13,
-	rotn: 					typeof rotn === 'undefined' ? undefined : rotn,
-	findBoth: 				typeof findBoth === 'undefined' ? undefined : findBoth,
-	countBoth: 				typeof countBoth === 'undefined' ? undefined : countBoth,
-	isDiagonalMatrix: 		typeof isDiagonalMatrix === 'undefined' ? undefined : isDiagonalMatrix,
-	isAnagram: 				typeof isAnagram === 'undefined' ? undefined : isAnagram,
-	validateParentheses:	typeof validateParentheses === 'undefined' ? undefined : validateParentheses,
-	flattenArray: 			typeof flattenArray === 'undefined' ? undefined : flattenArray
+    checkData: typeof checkData === 'undefined' ? undefined : checkData,
+    concatenateArrays: typeof concatenateArrays === 'undefined' ? undefined : concatenateArrays,
+    fixProperNoun: typeof fixProperNoun === 'undefined' ? undefined : fixProperNoun,
+    sortLetters: typeof sortLetters === 'undefined' ? undefined : sortLetters,
+    absVal: typeof absVal === 'undefined' ? undefined : absVal,
+    myMin: typeof myMin === 'undefined' ? undefined : myMin,
+    myMax: typeof myMax === 'undefined' ? undefined : myMax,
+    getMonth: typeof getMonth === 'undefined' ? undefined : getMonth,
+    randomElement: typeof randomElement === 'undefined' ? undefined : randomElement,
+    studentPairs: typeof studentPairs === 'undefined' ? undefined : studentPairs,
+    sumSquares: typeof sumSquares === 'undefined' ? undefined : sumSquares,
+    findMaxDiff: typeof findMaxDiff === 'undefined' ? undefined : findMaxDiff,
+    insertDashes: typeof insertDashes === 'undefined' ? undefined : insertDashes,
+    mySubstring: typeof mySubstring === 'undefined' ? undefined : mySubstring,
+    splitSwap: typeof splitSwap === 'undefined' ? undefined : splitSwap,
+    smallMultiples: typeof smallMultiples === 'undefined' ? undefined : smallMultiples,
+    rot13: typeof rot13 === 'undefined' ? undefined : rot13,
+    derot13: typeof derot13 === 'undefined' ? undefined : derot13,
+    rotn: typeof rotn === 'undefined' ? undefined : rotn,
+    findBoth: typeof findBoth === 'undefined' ? undefined : findBoth,
+    countBoth: typeof countBoth === 'undefined' ? undefined : countBoth,
+    isDiagonalMatrix: typeof isDiagonalMatrix === 'undefined' ? undefined : isDiagonalMatrix,
+    isAnagram: typeof isAnagram === 'undefined' ? undefined : isAnagram,
+    validateParentheses: typeof validateParentheses === 'undefined' ? undefined : validateParentheses,
+    flattenArray: typeof flattenArray === 'undefined' ? undefined : flattenArray
 };
