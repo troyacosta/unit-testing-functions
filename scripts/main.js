@@ -278,7 +278,17 @@ function findMaxDiff(intArray) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function insertDashes(string) {
-
+	if(!_.isString(string)) {
+		throw 'Invalid Input: argument must be a string';
+	}
+	var finalArray = [];
+	var dashes = string.split(' ');
+	for (var i = 0; i < dashes.length; i++) {
+		var newString = dashes[i].split('').join('-');
+		finalArray.push(newString);
+	}
+	finalArray = finalArray.join(' ');
+	return finalArray;
 }
 /*
  * PROBLEM `mySubstring`: (normal)
@@ -292,8 +302,20 @@ function insertDashes(string) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function mySubstring(string, start, end) {
-
+	if(!_.isString(string)) {
+		throw 'Invalid Input: first argument has to be a string';
+	}
+	if(!_.isNumber(start) || !_.isNumber(end)) {
+		throw 'Invalid Input: second and third arguments must be numbers';
+	}
+	if(start > end) {
+		throw 'Invalid Input: second argument must be less than third argument';
+	}
+    var difference = start - end;
+    var newString = string.slice(start, difference);
+    return newString;
 }
+
 /*
  * PROBLEM `splitSwap`: (hard)
  * Write a function called `splitSwap` that swaps two halves of a given array.
